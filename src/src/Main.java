@@ -1,55 +1,105 @@
 import java.util.Arrays;
 
 public class Main {
-
-    import java.util.Arrays;
-
-    public class Main {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
 
-            // Iteration 1 : Variables
+        // Iteration 3: Methods
 
-            String name = "Ragnar";
-            int healthPoints = 85;
-            int maxHealth = 100;
-            int level = 5;
-            int experiencePoints = 2300;
-            double gold = 156.60;
-            boolean lifequo = true;
-            char characterClass = 'R';
-            int xp = 2300 ;
-            String[] inventory = {"Sword", "Shield", "Potion"};
+        class Hero {
 
-            System.out.println("===CHARACTER SHEET===") ;
-            System.out.println("Name " + name) ;
-            System.out.println("Level " + level) ;
-            System.out.println(healthPoints + "/" + maxHealth) ;
-            System.out.println("XP  " + xp) ;
-            System.out.println("Gold  " + gold) ;
-            System.out.println("Alive? " + lifequo) ;
-
-            System.out.println("Inventory: 3 Items " + Arrays.toString(inventory)) ;
+                String name = "Ragnar";
+                int healthPoints = 85;
+                int maxHealth = 100;
+                int level = 5;
+                int experiencePoints = 2300;
+                double gold = 156.60;
+                boolean lifequo = true;
+                char characterClass = 'R';
+                int xp = 2300;
+                String[] inventory = {"Sword", "Shield", "Potion"};
 
 
-            // Iteration 2: Control Structures
+                Hero(String name, int health, int maxHealth, int level, int experiencePoints, double gold,
+                boolean lifequo, char chracterClass, String[] inventory){
+                    this.name = name;
+                    this.healthPoints = healthPoints;
+                    this.maxHealth = maxHealth;
+                    this.level = level;
+                    this.experiencePoints = experiencePoints;
+                    this.gold = gold;
+                    this.lifequo = lifequo;
+                    this.characterClass = characterClass;
+                    this.inventory = inventory;
+                }
 
-            System.out.println("===STATUS===") ;
 
-            if (healthPoints < maxHealth * 0.25) {
-                System.out.println("WARNING! : Health Critical !");
+            void printCharacterSheet()  {
+                printCharacterSheet() ;
+
+                System.out.println("===CHARACTER SHEET===");
+                System.out.println("Name: " + name);
+                System.out.println("Level " + level);
+                System.out.println(healthPoints + "/" + maxHealth);
+                System.out.println("XP: " + xp);
+                System.out.println("Gold amount :" + gold);
+                System.out.println("Alive? " + lifequo);
+
+                System.out.println("Inventory: 3 Items " + Arrays.toString(inventory));
             }
-            if (healthPoints <= 0) {
-                lifequo = false;
-            }
-            if (characterClass == 'W') {
-                System.out.println("Go Warrior!") ;
 
+            void takeDamage(int amount) {
+
+                int damageTaken = 30 ;
+                int healthAfterDamage = healthPoints - damageTaken ;
+
+                healthAfterDamage = healthPoints - damageTaken ;
+               if (healthAfterDamage <= 0  ) {
+                   lifequo = false;
+                   System.out.println("You are dead !");
+
+               } else if (healthAfterDamage >= 1) {
+                       lifequo = true ;
+                       System.out.println(name + " is still alive") ;
+                   }
+               }
+
+               void heal(int amount) {
+               }
+
+               void addGold(double amount)  {
+            }
+
+            boolean removeGold(double amount){
+            }
+
+            void addXP(int amount) {
+
+            }
+
+            void levelUp() {
+            }
+
+            boolean isHealthCritical()  {
+            }
+
+            boolean isAlive() {
+            }
+
+            double getHealthPercentage() {
+            }
+
+            void printInventory() {
+            }
             }
 
         }
 
+
+
+
     }
 
-}
+
+
 
