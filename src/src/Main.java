@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+        hero.takeDamage(30);
+        hero.heal(20);
+        hero.printInventory();
 
         // Iteration 3: Methods
 
@@ -65,12 +68,23 @@ public class Main {
                }
 
                void heal(int amount) {
+                    healthPoints = healthPoints + amount;
+                    if (healthPoints > maxHealth) {
+                        healthPoints = maxHealth ;
+                    }
                }
 
                void addGold(double amount)  {
+                    gold = gold + amount ;
             }
 
-            boolean removeGold(double amount){
+            boolean removeGold(double amount) {
+                if (gold <= amount) {
+                    gold = gold - amount;
+                    return true ;
+                } else if (gold <= 0) {
+                    return false;
+                }
             }
 
             void addXP(int amount) {
