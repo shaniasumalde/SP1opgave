@@ -50,7 +50,7 @@ public class Hero {
         if (healthAfterDamage > 0) {
             System.out.println(name + " is still alive");
         }
-
+        //
 
     }
 }
